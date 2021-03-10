@@ -2,7 +2,7 @@
   <div id="nav">
       <router-link to="/admin">Gérer le blog</router-link> |
       <router-link to="/blog">Blog</router-link> |
-      <router-link to="">Login</router-link>
+      <router-link to="/login">Login</router-link>
   </div>
   <router-view/>
 </template>

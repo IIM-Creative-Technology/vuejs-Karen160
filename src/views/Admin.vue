@@ -1,17 +1,16 @@
 <template>
   <div>
       <router-view></router-view>
-      <BlogAdmin></BlogAdmin>
+      <Blog/>
      
   </div>
 </template>
 
 <script>
-import BlogAdmin from '@/components/blog-admin.vue'
+import Blog from '@/components/blog.vue'
 export default {
-    name : admin,
     components: {
-        BlogAdmin
+        Blog
     }
 }
 </script>
