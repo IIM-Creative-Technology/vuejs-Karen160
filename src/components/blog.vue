@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <div >
       <img :src="image">
-      <h1>{{ titre }}</h1>
-      <p>{{ description }}</p>
+      <h1>titre : {{ titre }}</h1>
+      <p>description : {{ description }}</p>
   </div>    
 </template>
 
@@ -14,7 +14,7 @@ export default {
       "titre"
     ],
 
-    name: "Blog"
+    name: "Poste"
     
 }
 </script>

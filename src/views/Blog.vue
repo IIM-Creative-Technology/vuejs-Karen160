@@ -2,14 +2,14 @@
     <h1>
         Blog
     </h1>
-    <div v-for="post in posts" :key="post.title" >
-        <Blog :image="post.img" :description="post.content" :titre="post.title"/>
+    <div v-for="post in posts" :key="post">
+        <Poste :image="post.img" :titre="post.title" :description="post.content"></Poste>
         
     </div>
 </template>
 
 <script>
-import Blog from '@/components/blog.vue'
+import Poste from '@/components/blog.vue'
 // import { mapState } from 'vuex'
 export default {
   data () {
@@ -23,10 +23,11 @@ export default {
       posts(){
           return this.$store.state.post
       }
+
   },
 
   components: {
-      Blog
+      Poste
   }
 }
 </script>
