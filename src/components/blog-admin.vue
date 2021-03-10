@@ -1,7 +1,7 @@
 <template>
   <div>
-    <img src="https://www.gamerguides.com/assets/guides/216/mona_genshin_impact_uhdpaper.com_4K_3.2971.jpg">
-    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam tempora ad assumenda esse, vel reiciendis rem amet error, magni fugiat officia enim labore eligendi temporibus hic velit. Laborum, a voluptates.</p>
+    <img src="{{ image }}">
+    <p>{{ description }}</p>
     <button class="edit">
         Editer
     </button>
@@ -13,6 +13,10 @@
 
 <script>
 export default {
+  props: {
+      image,
+      description
+  },
     name: "BlogAdmin"
 }
 </script>

@@ -1,22 +1,29 @@
 <template>
-    <h1>
-        Blog
-    </h1>
+    <!-- On récupère tous les posts de blog enregistrer grâce à une boucle v-for -->
     <div v-for="post in posts" :key="post.title">
-        <h1>{{post.title}}</h1>
+        <Blog 
+        image = "{{ post.img }}"
+        description = "{{ post.content }}"
+        />
+        
+        <!-- <h1>{{post.title}}</h1>
         <h2>{{post.metaTitle}}</h2>
         <h2>{{post.metaDesc}}</h2>
-        <img :src="post.img" alt="">
+        <img :src="post.img" alt=""> -->
     </div>
 </template>
 
 <script>
+import Blog from '@/components/blog.vue'
 export default {
     computed: {
       posts(){
           return this.$store.state.post
       }
   },
+  components: {
+        Blog
+    },
 }
 </script>
 
