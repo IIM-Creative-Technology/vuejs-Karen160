@@ -1,17 +1,24 @@
 <template>
   <div>
-   <img src="{{ image }}">
+   <img :src="image">
     <p>{{ description }}</p>
   </div>
 </template>
 
 <script>
 export default {
+  props: [
+      "image", 
+      "description"
+  ],
     name: "Blog",
-    props: {
-      image,
-      description
-  },
+    // data() {
+    //   return {
+    //       image: null, 
+    //       description: null
+    //   }
+  
+  
 }
 </script>
 
