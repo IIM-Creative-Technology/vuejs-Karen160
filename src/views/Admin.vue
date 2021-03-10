@@ -1,13 +1,16 @@
 <template>
-    <h1>Admin</h1>
+  <div>
+      <router-view></router-view>
+      <Blog/>
+     
+  </div>
 </template>
 
 <script>
+import Blog from '@/components/blog.vue'
 export default {
-    
+    components: {
+        Blog
+    }
 }
 </script>
-
-<style scoped>
-    
-</style>
