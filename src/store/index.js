@@ -9,22 +9,62 @@ export default new VueX.Store({
 
   mutations: {
 
-    addPost(state) {
-      if(this.titre != ""){
-          if(this.metaTitle != ""){
-              if(this.metaDescription != ""){
-                  if(this.img == ""){
-                      this.img = "http://www.ipsgroup.fr/wp-content/uploads/2013/12/default_image_01.png";
-                        state.post.push({
-                          title: this.titre,
-                          metaTitle: this.metaTitle,
-                          metaDesc: this.metaDescription,
-                          img: this.img,
-                          content: this.content
-                      })
-                  }
+    addPost(state, payload){
+      if(payload[0] != ""){
+        
+        if(payload[1] != ""){
+         
+            if(payload[2] != ""){
+              if(payload[3] == ""){
+                payload[3] = "http://www.ipsgroup.fr/wp-content/uploads/2013/12/default_image_01.png"
+              }
+                
                   
-                  console.log(this.$store.state.post);
+              state.post.push({
+        
+                title: payload[0],
+                metaTitle: payload[1],
+                metaDesc: payload[2],
+                img: payload[3],
+                content: payload[4]
+            })
+                      
+                
+                
+            }else{
+                alert('Renseignez la meta description');
+            }
+        }else{
+            alert('Renseignez le meta title');
+        }
+        
+    
+    }else{
+        alert('Renseignez le titre');
+    }
+      console.log(this.titre)
+      
+    }
+    
+
+  },
+
+  actions: {
+
+    addPost(context) {
+      
+      if(this.titre != ""){
+        
+          if(this.metaTitle != ""){
+           
+              if(this.metaDescription != ""){
+               
+                  
+                    
+                    context.commit('addPost', )  
+                        
+                  
+                  
               }else{
                   alert('Renseignez la meta description');
               }
@@ -38,12 +78,6 @@ export default new VueX.Store({
       }
      
   }
-
-  },
-
-  actions: {
-
-    
 
   },
 
