@@ -6,7 +6,7 @@ import Post from '../views/Post.vue'
 
 const routes = [
   {
-    path: '/',
+    path: '/blog',
     name: 'Blog',
     component: Blog
   },
