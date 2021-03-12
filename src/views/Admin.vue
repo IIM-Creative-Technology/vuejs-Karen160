@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <div id="adminDiv">
       <router-link to="/addpost"><button>add Post</button></router-link>
-      <div v-for="post in posts" :key="post">
-        <PosteAdmin :image="post.img" :description="post.metaDesc"></PosteAdmin>
+      <div >
+        <PosteAdmin :image="post.img" :description="post.metaDesc" :lien="index" v-for="(post, index) in posts" :key="(post, index)"></PosteAdmin>
       </div>
     <router-view></router-view>
   </div>
@@ -12,6 +12,7 @@
 import PosteAdmin from '@/components/poste-admin.vue'
 export default {
   computed: {
+    /// Fonction pour avoir la table post
       posts(){
           return this.$store.state.post
       }
@@ -22,3 +23,9 @@ export default {
     },
 }
 </script>
+
+<style scoped>
+    #adminDiv{
+      display: flex
+    }
+</style>

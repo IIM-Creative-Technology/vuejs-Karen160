@@ -3,6 +3,7 @@ import Blog from '../views/Blog.vue'
 import Admin from '../views/Admin.vue'
 import AddPost from '../views/AddPost.vue'
 import Post from '../views/Post.vue'
+import Modify from '../components/modify.vue'
 
 const routes = [
   {
@@ -13,7 +14,14 @@ const routes = [
   {
     path: '/admin',
     name: 'Admin',
-    component: Admin
+    component: Admin,
+
+      children: [
+        {
+          path: 'modify/:id',
+          component : Modify
+        }
+      ]
   },
   {
     path: '/addpost',
@@ -21,7 +29,7 @@ const routes = [
     component: AddPost
   },
   {
-    path: '/post/:metaTitle',
+    path: '/post/:id',
     name: 'Post',
     component: Post
   }

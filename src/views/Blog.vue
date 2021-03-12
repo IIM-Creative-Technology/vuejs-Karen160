@@ -1,6 +1,6 @@
 <template>
-    <div v-for="post in posts" :key="post">
-        <Poste :image="post.img" :titre="post.title" :description="post.metaDesc" :lien="post.metaTitle"></Poste>
+    <div v-for="(post, index) in posts" :key="(post, index)">
+        <Poste :image="post.img" :titre="post.title" :description="post.metaDesc" :lien="index"></Poste>
         
     </div>
 </template>
@@ -10,6 +10,7 @@ import Poste from '@/components/poste.vue'
 // import { mapState } from 'vuex'
 export default {
     computed: {
+        /// Fonction pour avoir la table post
       posts(){
           return this.$store.state.post
       }

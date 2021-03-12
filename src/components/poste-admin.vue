@@ -2,9 +2,12 @@
   <div>
     <img :src="image">
     <p>{{ description }}</p>
+    <!-- Lien pour afficher le modficateur de l'article précis -->
+    <router-link :to="'/admin/modify/'+lien">
     <button class="edit">
         Editer
     </button>
+    </router-link>
     <button class="supp">
         X
     </button>
@@ -15,7 +18,8 @@
 export default {
   props: [
       "image",
-      "description"
+      "description",
+      "lien"
   ],
     name: "PosteAdmin"
 }
