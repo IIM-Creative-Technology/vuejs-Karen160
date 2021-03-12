@@ -5,19 +5,19 @@
                 <label for="title">Titre de la page</label>
                 <input type="text" name="title" v-model="posts[$route.params.id].title" disabled>
                 <label for="metaTitle">Meta Title</label>
-                <input type="text" name="metaTitle" v-model="posts[$route.params.id].metaTitle" :placeholder="posts[$route.params.id].metaTitle">
+                <input type="text" name="metaTitle" v-model="posts[$route.params.id].metaTitle" >
                 <label for="metaDesc">Meta Description </label>
-                <input type="text" name="metaDesc" v-model="posts[$route.params.id].metaDescription" :placeholder="posts[$route.params.id].metaDesc">
+                <input type="text" name="metaDesc" v-model="posts[$route.params.id].metaDesc" >
             </div>
             <div id="image">
                 <img v-if="img == ''" src="http://www.ipsgroup.fr/wp-content/uploads/2013/12/default_image_01.png" alt="">
                 <img v-else v-bind:src="img" alt="">
-                <input type="text" v-model.trim="posts[$route.params.id].img" :placeholder="posts[0].img">
+                <input type="text" v-model.trim="posts[$route.params.id].img">
             </div>
         </article>
         <div id="textarea">
             <label for="content">Corps du post</label>
-            <textarea name="content" id="" cols="30" rows="10" v-model="content" ></textarea>
+            <textarea name="content" id="" cols="30" rows="10" v-model="posts[$route.params.id].content" ></textarea>
         </div>
         <button >Valider le post</button>
     </section>
