@@ -41,7 +41,7 @@ img{
 }
 
 p{
-    font-size: 12px;
+    font-size: 14px;
     padding: 0 10px;
     word-wrap: break-word;
     width: 50%;
@@ -50,7 +50,7 @@ p{
 .edit{
     border: 1px solid black;
     padding: 20px 40px;
-    font-size: 12px;
+    font-size: 14px;
     cursor: pointer;
 }
 
@@ -58,7 +58,7 @@ p{
     border: 1px solid black;
     background-color: red;
     padding: 20px;
-    font-size: 12px;
+    font-size: 14px;
     color: white;
     margin-left: 20px;
     cursor: pointer;
