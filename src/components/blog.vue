@@ -1,9 +1,11 @@
 <template>
+<router-link :to="'/post/'+lien">
   <div >
       <img :src="image">
       <h1>titre : {{ titre }}</h1>
       <p>description : {{ description }}</p>
   </div>    
+</router-link>  
 </template>
 
 <script>
@@ -11,7 +13,8 @@ export default {
     props: [
       "image",
       "description",
-      "titre"
+      "titre",
+      "lien"
     ],
 
     name: "Poste"
@@ -37,6 +40,7 @@ img{
 p{
     font-size: 12px;
     padding: 0 10px;
+    text-decoration: none;
 }
 
 </style>

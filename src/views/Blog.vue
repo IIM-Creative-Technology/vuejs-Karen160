@@ -3,7 +3,7 @@
         Blog
     </h1>
     <div v-for="post in posts" :key="post">
-        <Poste :image="post.img" :titre="post.title" :description="post.content"></Poste>
+        <Poste :image="post.img" :titre="post.title" :description="post.content" :lien="post.metaTitle"></Poste>
         
     </div>
 </template>

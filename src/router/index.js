@@ -21,7 +21,7 @@ const routes = [
     component: AddPost
   },
   {
-    path: '/post',
+    path: '/post/:metaTitle',
     name: 'Post',
     component: Post
   }
