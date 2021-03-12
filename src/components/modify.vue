@@ -19,7 +19,8 @@
             <label for="content">Corps du post</label>
             <textarea name="content" id="" cols="30" rows="10" v-model="content" ></textarea>
         </div>
-        <button >Valider le post</button>
+        <br>
+        <button class="valid">Valider le post</button>
     </section>
 </template>
 
@@ -30,7 +31,6 @@ export default {
         /// Fonction pour aller chercher le post précis
       posts(){
         return this.$store.state.post
-        
       }
   },
     
@@ -39,7 +39,11 @@ export default {
 
 <style scoped>
     section{
-        width: 45%;
+        width: 50%;
+        display: block;
+        border: 1px solid black;
+        padding: 10px;
+        margin: 50px 10px 10px;
     }
     article{
       display: flex;  
@@ -61,8 +65,9 @@ export default {
         flex-direction: column;
     }
     img{
-        height: 150px;
-        border-radius: 130px;
+        height: 200px;
+        width: 200px;
+        border-radius: 200px;
     }
     #textarea{
         align-items: center;
@@ -72,5 +77,14 @@ export default {
     }
     #textarea label{
         margin-right: 50px;
+    }
+
+    .valid{
+        border: 1px solid black;
+        padding: 10px 40px;
+        font-size: 14px;
+        cursor: pointer;
+        display: block;
+        margin: 0 auto;
     }
 </style>

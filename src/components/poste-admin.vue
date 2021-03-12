@@ -33,7 +33,8 @@ div{
     width: 70%;
     border: 1px solid black;
     align-items: center;
-    margin: 0 auto;
+    margin: 50px auto;
+
 }
 
 img{

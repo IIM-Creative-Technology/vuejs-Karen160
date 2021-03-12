@@ -1,6 +1,5 @@
 <template>
-    <h1>Créer une nouvelle page de blog</h1>
-
+    <h2>Créer une nouvelle page de blog</h2>
     <section>
         <article>
             <div id="inputText">
@@ -94,8 +93,9 @@ export default {
         flex-direction: column;
     }
     img{
-        height: 150px;
-        border-radius: 130px;
+        height: 200px;
+        width: 200px;
+        border-radius: 200px;
     }
     #textarea{
         align-items: center;
@@ -105,5 +105,16 @@ export default {
     }
     #textarea label{
         margin-right: 50px;
+    }
+    button{
+        border: 1px solid black;
+        padding: 10px 40px;
+        font-size: 14px;
+        cursor: pointer;
+        display: block;
+        margin: 30px auto;
+    }
+    h2{
+        text-align: center;
     }
 </style>
