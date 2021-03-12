@@ -13,7 +13,6 @@ import PosteAdmin from '@/components/poste-admin.vue'
 export default {
   computed: {
       posts(){
-          console.log(this.$store.state.post)
           return this.$store.state.post
       }
   },
