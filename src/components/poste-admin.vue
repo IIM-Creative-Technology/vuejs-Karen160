@@ -1,6 +1,6 @@
 <template>
   <div>
-    <img src="{{ image }}">
+    <img :src="image">
     <p>{{ description }}</p>
     <button class="edit">
         Editer
@@ -13,11 +13,11 @@
 
 <script>
 export default {
-  props: {
-      image,
-      description
-  },
-    name: "BlogAdmin"
+  props: [
+      "image",
+      "description"
+  ],
+    name: "PosteAdmin"
 }
 </script>
 
@@ -39,6 +39,8 @@ img{
 p{
     font-size: 12px;
     padding: 0 10px;
+    word-wrap: break-word;
+    width: 50%;
 }
 
 .edit{
@@ -57,6 +59,4 @@ p{
     margin-left: 20px;
     cursor: pointer;
 }
-
-
 </style>

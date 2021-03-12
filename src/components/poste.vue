@@ -1,8 +1,8 @@
 <template>
   <div>
-   <img :src="image">
-    <p>{{ description }}</p>
-  </div>
+      <img :src="image">
+      <p>{{ description }}</p>
+  </div>    
 </template>
 
 <script>
@@ -11,14 +11,7 @@ export default {
       "image", 
       "description"
   ],
-    name: "Blog",
-    // data() {
-    //   return {
-    //       image: null, 
-    //       description: null
-    //   }
-  
-  
+  name: "Poste",
 }
 </script>
 
@@ -26,7 +19,6 @@ export default {
 div{
     padding: 50px;
     display: flex;
-    justify-content: space-between;
     width: 70%;
     border: 1px solid black;
     align-items: center;
@@ -40,6 +32,8 @@ img{
 p{
     font-size: 12px;
     padding: 0 10px;
+    word-wrap: break-word;
+    width: 70%;
 }
 
 </style>

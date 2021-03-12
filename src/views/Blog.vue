@@ -1,38 +1,24 @@
 <template>
-    <!-- On récupère tous les posts de blog enregistrer grâce à une boucle v-for -->
-    <div v-for="post in posts" :key="post.title">
-        <Blog 
-        :image = "post.img"
-        :description = "post.content"
-        />
+    <div v-for="post in posts" :key="post">
+        <Poste :image="post.img" :description="post.metaDesc"></Poste>
         
-        <!-- <h1>{{post.title}}</h1>
-        <h2>{{post.metaTitle}}</h2>
-        <h2>{{post.metaDesc}}</h2>
-        <img :src="post.img" alt=""> -->
     </div>
 </template>
 
 <script>
-import { mapState } from 'vuex'
-import Blog from '@/components/blog.vue'
+import Poste from '@/components/poste.vue'
+// import { mapState } from 'vuex'
 export default {
-  data () {
-    return {
-        ...mapState(['post'])
-    }
-  },
     computed: {
       posts(){
           console.log(this.$store.state.post)
           return this.$store.state.post
-           
-      },
-      
+      }
   },
+
   components: {
-        Blog
-    },
+      Poste
+  }
 }
 </script>
 
