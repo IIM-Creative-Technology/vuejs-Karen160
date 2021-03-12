@@ -1,7 +1,8 @@
 <template>
     <section>
-        <article v-for="post in posts" :key="post">
-            <div id="inputText">
+        <article v-for="post in posts" :key="post.title">
+            <p>{{post.title}}</p>
+            <!-- <div id="inputText">
                 <label for="title">Titre de la page</label>
                 <input type="text" name="title" v-model="titre" :placeholder="post.title" disabled>
                 <label for="metaTitle">Meta Title</label>
@@ -13,7 +14,7 @@
                 <img v-if="img == ''" src="http://www.ipsgroup.fr/wp-content/uploads/2013/12/default_image_01.png" alt="">
                 <img v-else v-bind:src="img" alt="">
                 <input type="text" v-model.trim="img" :placeholder="post.img">
-            </div>
+            </div>-->
         </article>
         <div id="textarea">
             <label for="content">Corps du post</label>
