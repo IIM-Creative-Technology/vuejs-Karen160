@@ -41,15 +41,31 @@ export default {
   },
 
   computed: {
+      date: function () {
+                var date = new Date();
+                var year = date.getFullYear();
+                var months = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre",
+                    "Octobre", "Novembre", "Décembre"
+                ];
+                var month = months[date.getMonth()];
+                var days = ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"];
+                var day = days[date.getDay()];
+                var jour = date.getDate();
+                date = day + " " + jour + " " + month + " " + year;
+                return date;
+            },
+
       posts(){
           return this.$store.state.post
       },
-      ...mapState(['post'])
+      ...mapState(['post']),
+
+      
   },
   
   methods: {
       addPost(){
-          this.$store.commit('addPost', [this.titre, this.metaTitle, this.metaDescription, this.img, this.content])
+          this.$store.dispatch('addPost', [this.titre, this.metaTitle, this.metaDescription, this.img, this.content, this.date])
       }
       
   }

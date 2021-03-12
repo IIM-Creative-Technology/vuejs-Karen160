@@ -1,17 +1,22 @@
 <template>
-  <div>
+<router-link :to="'/post/'+lien">
+  <div >
       <img :src="image">
       <p>{{ description }}</p>
   </div>    
+</router-link>  
 </template>
 
 <script>
 export default {
-  props: [
-      "image", 
-      "description"
-  ],
-  name: "Poste",
+    props: [
+      "image",
+      "description",
+      "lien"
+    ],
+
+    name: "Poste"
+    
 }
 </script>
 

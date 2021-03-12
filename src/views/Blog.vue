@@ -1,6 +1,6 @@
 <template>
     <div v-for="post in posts" :key="post">
-        <Poste :image="post.img" :description="post.metaDesc"></Poste>
+        <Poste :image="post.img" :titre="post.title" :description="post.metaDesc" :lien="post.metaTitle"></Poste>
         
     </div>
 </template>

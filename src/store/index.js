@@ -10,29 +10,17 @@ export default new VueX.Store({
   mutations: {
 
     addPost(state, payload){
-      if(payload[0] != ""){
-        if(payload[1] != ""){
-            if(payload[2] != ""){
-              if(payload[3] == ""){
-                payload[3] = "http://www.ipsgroup.fr/wp-content/uploads/2013/12/default_image_01.png"
-              }
               state.post.push({
         
                 title: payload[0],
                 metaTitle: payload[1],
                 metaDesc: payload[2],
                 img: payload[3],
-                content: payload[4]
+                content: payload[4],
+                date: payload[5]
+
             }) 
-            }else{
-                alert('Renseignez la meta description');
-            }
-        }else{
-            alert('Renseignez le meta title');
-        }
-    }else{
-        alert('Renseignez le titre');
-    }
+            
       
     }
     
@@ -41,17 +29,21 @@ export default new VueX.Store({
 
   actions: {
 
-    addPost(context) {
+    addPost(context, payload) {
       
-      if(this.titre != ""){
+      if(payload[0]){
         
-          if(this.metaTitle != ""){
+          if(payload[1]){
            
-              if(this.metaDescription != ""){
+              if(payload[2]){
+
+                if(payload[3] == ""){
+                  payload[3] = "http://www.ipsgroup.fr/wp-content/uploads/2013/12/default_image_01.png"
+                }
                
                   
                     
-                    context.commit('addPost', )  
+                    context.commit('addPost', payload)  
                         
                   
                   
@@ -72,6 +64,13 @@ export default new VueX.Store({
   },
 
   modules: {
+  },
+
+  getters: {
+    
+    getPostByMetaTitle: (state) => (title) => {
+      return state.post.find(post => post.metaTitle === title)
+    }
   }
 
 })
