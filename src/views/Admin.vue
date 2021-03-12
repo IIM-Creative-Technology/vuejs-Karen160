@@ -1,7 +1,7 @@
 <template>
   <div id="adminDiv">
       <router-link to="/addpost"><button>add Post</button></router-link>
-      <div >
+      <div>
         <PosteAdmin :image="post.img" :description="post.metaDesc" :lien="index" v-for="(post, index) in posts" :key="(post, index)"></PosteAdmin>
       </div>
     <router-view></router-view>
