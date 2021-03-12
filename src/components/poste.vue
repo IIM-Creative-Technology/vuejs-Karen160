@@ -35,10 +35,15 @@ img{
 }
 
 p{
-    font-size: 12px;
+    font-size: 14px;
     padding: 0 10px;
     word-wrap: break-word;
     width: 70%;
+}
+
+a{
+    text-decoration: none;
+    color: black
 }
 
 </style>
