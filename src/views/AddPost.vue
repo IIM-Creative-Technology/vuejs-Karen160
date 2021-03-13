@@ -1,6 +1,5 @@
 <template>
-    <h1>Créer une nouvelle page de blog</h1>
-
+    <h2>Créer une nouvelle page de blog</h2>
     <section>
         <article>
             <div id="inputText">
@@ -12,7 +11,8 @@
                 <input type="text" name="metaDesc" v-model="metaDescription">
             </div>
             <div id="image">
-                <img v-if="img == ''" src="http://www.ipsgroup.fr/wp-content/uploads/2013/12/default_image_01.png" alt="">
+                <img v-if="img == ''" src="http://www.ipsgroup.fr/wp-content/uploads/2013/12/default_image_01.png"
+                    alt="">
                 <img v-else v-bind:src="img" alt="">
                 <input type="text" placeholder="url de l'image" v-model.trim="img">
             </div>
@@ -32,16 +32,15 @@
 </template>
 
 <script>
+    export default {
+        data() {
+            return {
+                img: "",
+            }
+        },
 
-export default {
-  data () {
-    return {
-        img: "",
-    }
-  },
-
-  computed: {
-      date: function () {
+        computed: {
+            date: function () {
                 var date = new Date();
                 var year = date.getFullYear();
                 var months = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre",
@@ -55,59 +54,79 @@ export default {
                 return date;
             },
 
-      posts(){
-          return this.$store.state.post
-      },
+            posts() {
+                return this.$store.state.post
+            },
 
-      
-  },
-  
-  methods: {
-      addPost(){
-          this.$store.dispatch('addPost', {title: this.titre,
-                                           metaTitle: this.metaTitle, 
-                                           metaDesc: this.metaDescription, 
-                                           img: this.img, 
-                                           content: this.content, 
-                                           date: this.date})
-      }
-      
-  }
-    
-}
+
+        },
+
+        methods: {
+            addPost() {
+                this.$store.dispatch('addPost', {
+                    title: this.titre,
+                    metaTitle: this.metaTitle,
+                    metaDesc: this.metaDescription,
+                    img: this.img,
+                    content: this.content,
+                    date: this.date
+                })
+            }
+        }
+    }
 </script>
 
-<style scoped >
-    article{
-      display: flex;  
-      justify-content: space-around;
-      margin-top: 55px;
+<style scoped>
+    article {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 55px;
     }
-    #inputText{
+
+    #inputText {
         display: flex;
         width: 40%;
         flex-wrap: wrap;
         align-items: center;
     }
-    #inputText *{
-        width:45%;
+
+    #inputText * {
+        width: 45%;
         margin-bottom: 15px;
     }
-    #image{
+
+    #image {
         display: flex;
         flex-direction: column;
     }
-    img{
-        height: 150px;
-        border-radius: 130px;
+
+    img {
+        height: 200px;
+        width: 200px;
+        border-radius: 200px;
     }
-    #textarea{
+
+    #textarea {
         align-items: center;
         margin-top: 50px;
         display: flex;
         justify-content: center;
     }
-    #textarea label{
+
+    #textarea label {
         margin-right: 50px;
+    }
+
+    button {
+        border: 1px solid black;
+        padding: 10px 40px;
+        font-size: 14px;
+        cursor: pointer;
+        display: block;
+        margin: 30px auto;
+    }
+
+    h2 {
+        text-align: center;
     }
 </style>
