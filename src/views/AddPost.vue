@@ -32,7 +32,7 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
+
 export default {
   data () {
     return {
@@ -58,14 +58,18 @@ export default {
       posts(){
           return this.$store.state.post
       },
-      ...mapState(['post']),
 
       
   },
   
   methods: {
       addPost(){
-          this.$store.dispatch('addPost', [this.titre, this.metaTitle, this.metaDescription, this.img, this.content, this.date])
+          this.$store.dispatch('addPost', {title: this.titre,
+                                           metaTitle: this.metaTitle, 
+                                           metaDesc: this.metaDescription, 
+                                           img: this.img, 
+                                           content: this.content, 
+                                           date: this.date})
       }
       
   }

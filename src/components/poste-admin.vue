@@ -8,7 +8,7 @@
         Editer
     </button>
     </router-link>
-    <button class="supp">
+    <button class="supp" @click='remover'>
         X
     </button>
   </div>
@@ -16,6 +16,11 @@
 
 <script>
 export default {
+  methods: {
+      remover(index){
+                this.$emit('supprime', index)
+            },
+  },
   props: [
       "image",
       "description",
@@ -23,6 +28,7 @@ export default {
   ],
     name: "PosteAdmin"
 }
+
 </script>
 
 <style scoped>

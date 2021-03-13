@@ -1,9 +1,9 @@
 <template>
-    <div v-for="post in posts" :key="post.metaTitle">
-        <img :src="post.img" :alt="post.title">
-        <h2>{{post.title}}</h2>
-        <p>{{post.content}}</p>
-        <span>Posté le {{post.date}}</span>
+    <div>
+        <img :src="posts[$route.params.id].img" :alt="posts[$route.params.id].title">
+        <h2>{{posts[$route.params.id].metaDesc}}</h2>
+        <p>{{posts[$route.params.id].content}}</p>
+        <span>Posté le {{posts[$route.params.id].date}}</span>
     </div>
 </template>
 
@@ -11,7 +11,7 @@
 export default {
     computed: {
       posts(){
-        return this.$store.state.post.filter(post=> post.metaTitle === this.$route.params.metaTitle)
+        return this.$store.state.post
       }
   },  
 }
