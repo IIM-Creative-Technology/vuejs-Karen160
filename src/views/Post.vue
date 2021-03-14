@@ -1,7 +1,7 @@
 <template>
     <div>
         <img :src="posts[$route.params.id].img" :alt="posts[$route.params.id].title">
-        <h2>{{posts[$route.params.id].metaDesc}}</h2>
+        <h2>{{posts[$route.params.id].title}}</h2>
         <p>{{posts[$route.params.id].content}}</p>
         <span>Posté le {{posts[$route.params.id].date}}</span>
     </div>
