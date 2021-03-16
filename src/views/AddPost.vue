@@ -69,7 +69,9 @@
                     metaDesc: this.metaDescription,
                     img: this.img,
                     content: this.content,
-                    date: this.date
+                    date: this.date,
+                    author : "Inconnu",
+                    imgauthor : "",
                 })
             }
         }

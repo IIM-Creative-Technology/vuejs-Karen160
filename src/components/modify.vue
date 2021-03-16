@@ -46,7 +46,6 @@
                     content: this.content,
                     date: this.date
                 }, this.$route.params.id])
-
             }
         },
 
