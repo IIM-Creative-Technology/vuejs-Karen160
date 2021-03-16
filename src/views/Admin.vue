@@ -1,6 +1,6 @@
 <template>
   <router-link to="/addpost">
-    <button>Ajouter un post</button>
+    <button>Créer une page</button>
   </router-link>
   <div id="adminDiv">
     <section class="poste">

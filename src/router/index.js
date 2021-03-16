@@ -30,7 +30,7 @@ const routes = [
     component: AddPost
   },
   {
-    path: '/post/:id',
+    path: '/blog/:id',
     name: 'Post',
     component: Post,
     // meta: {

@@ -1,5 +1,5 @@
 <template>
-    <router-link :to="'/post/'+lien">
+    <router-link :to="'/blog/'+lien">
         <div>
             <img :src="image">
             <p>{{ description }}</p>

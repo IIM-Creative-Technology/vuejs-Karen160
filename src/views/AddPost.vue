@@ -23,12 +23,6 @@
         </div>
         <button @click='addPost'>Valider le post</button>
     </section>
-    <div v-for="post in posts" :key="post.title">
-        <h1>{{post.title}}</h1>
-        <h2>{{post.metaTitle}}</h2>
-        <h2>{{post.metaDesc}}</h2>
-        <img :src="post.img" alt="">
-    </div>
 </template>
 
 <script>
@@ -71,7 +65,7 @@
                     content: this.content,
                     date: this.date,
                     author : "Inconnu",
-                    imgauthor : "",
+                    imgauthor : "http://www.ipsgroup.fr/wp-content/uploads/2013/12/default_image_01.png",
                 })
             }
         }
