@@ -5,6 +5,7 @@ import AddPost from '../views/AddPost.vue'
 import Post from '../views/Post.vue'
 import Modify from '../components/modify.vue'
 import Login from '../views/Login.vue'
+import Register from '../views/Register.vue'
 
 const routes = [
   {
@@ -42,6 +43,11 @@ const routes = [
     path: '/login',
     name: 'Login',
     component: Login
+  },
+  {
+    path: '/register',
+    name: 'Register',
+    component: Register
   }
 ]
 
