@@ -17,15 +17,20 @@
 <script>
     export default {
         methods: {
+            //Pour supprimer l'article sélectionné
             remover(index) {
                 this.$emit('supprime', index)
             },
         },
+
+        //Définir les props qui seront remplis dans la page où le composant est appelé
         props: [
             "image",
             "description",
             "lien"
         ],
+
+        //Nomme le composant PosteAdmin
         name: "PosteAdmin"
     }
 </script>

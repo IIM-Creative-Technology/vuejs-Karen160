@@ -1,22 +1,23 @@
 <template>
+  <!-- Barre de navigation en fonction de si l'utilisateur est connecté ou non -->
   <div id="nav">
     <router-link v-if="this.$store.state.token != null" to="/admin">Gérer le blog</router-link> |
     <router-link to="/blog">Blog</router-link> |
-    <router-link v-if ="this.$store.state.token == null" to="/login"> Login</router-link> |
-    <router-link v-if ="this.$store.state.token != null" @click="disconnect" to="/login">Déconnexion</router-link>
+    <router-link v-if="this.$store.state.token == null" to="/login"> Login</router-link> |
+    <router-link v-if="this.$store.state.token != null" @click="disconnect" to="/login">Déconnexion</router-link>
   </div>
-  <router-view/>
+  <router-view />
 </template>
 
 
 <script>
-export default {
+  export default {
     methods: {
-        disconnect(){
-          this.$store.state.token = null
-        }    
+      disconnect() {
+        this.$store.state.token = null
+      }
     }
-}
+  }
 </script>
 
 <style>

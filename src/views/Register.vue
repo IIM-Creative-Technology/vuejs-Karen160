@@ -1,7 +1,6 @@
 <template>
     <section>
-        <img v-if="img == ''" src="http://www.ipsgroup.fr/wp-content/uploads/2013/12/default_image_01.png"
-                alt="">
+        <img v-if="img == ''" src="http://www.ipsgroup.fr/wp-content/uploads/2013/12/default_image_01.png" alt="">
         <img v-else v-bind:src="img" alt="">
         <br><br>
         <label>Photo de profil :</label>
@@ -17,7 +16,8 @@
         <input type="text" v-model="password">
         <br><br><br>
         <button @click="addUser">S'inscrire</button>
-        <p>Déjà inscrit ? <router-link to="/login"><span>Se connecter</span></router-link></p>
+        <p>Déjà inscrit ? <router-link to="/login"><span>Se connecter</span></router-link>
+        </p>
     </section>
 </template>
 
@@ -29,11 +29,8 @@
             }
         },
 
-        computed: {},
-
-        components: {},
-
         methods: {
+            // Enregistrer les informations du nouvel utilisateur
             addUser() {
                 this.$store.dispatch('addUser', {
                     email: this.email,
@@ -48,37 +45,37 @@
 </script>
 
 <style scoped>
-    section{
+    section {
         display: block;
         margin: 100px auto;
         text-align: center;
     }
 
-    label{
+    label {
         font-size: 20px;
     }
 
-    label:nth-child(4){
+    label:nth-child(4) {
         margin-right: 70px;
     }
 
-    label:nth-child(9){
+    label:nth-child(9) {
         margin-right: 130px;
     }
 
-     label:nth-child(14){
+    label:nth-child(14) {
         margin-right: 150px;
     }
 
-    label:nth-child(19){
+    label:nth-child(19) {
         margin-right: 80px;
     }
 
-    input{
-        padding : 10px 50px;
+    input {
+        padding: 10px 50px;
     }
 
-    button{
+    button {
         text-transform: uppercase;
         font-size: 15px;
         background-color: white;
@@ -87,7 +84,8 @@
         cursor: pointer;
     }
 
-    p, a{
+    p,
+    a {
         text-decoration: none;
         color: black;
         font-weight: bold;
@@ -104,6 +102,4 @@
         width: 200px;
         border-radius: 200px;
     }
-
-
 </style>

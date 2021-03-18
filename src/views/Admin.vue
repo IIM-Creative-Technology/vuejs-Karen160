@@ -12,29 +12,34 @@
     <router-view></router-view>
   </div>
   <button v-if="posts.length > count+1" @click="count += 2">Voir plus</button>
-    
+
 </template>
 
 <script>
+  // Importer le composant PosteAdmin
   import PosteAdmin from '@/components/poste-admin.vue'
   export default {
     data() {
+      // Réglage du compteur pour afficher seulement 4 articles de blog 
       return {
         count: 2,
       }
     },
     methods: {
+      // Pour supprimer l'article
       poubelle(index) {
         this.$store.commit('deletePost', index)
       }
     },
+
     computed: {
-      /// Fonction pour avoir la table post
+      // Fonction pour avoir la table post
       posts() {
         return this.$store.state.post
       },
     },
 
+    //Appel du composant PosteAdmin
     components: {
       PosteAdmin
     },
@@ -49,7 +54,7 @@
     align-items: center;
   }
 
-  .poste{
+  .poste {
     width: 70%;
     flex-wrap: wrap;
     display: flex;

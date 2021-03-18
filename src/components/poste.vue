@@ -9,12 +9,14 @@
 
 <script>
     export default {
+        //Définir les props qui seront remplis dans la page où le composant est appelé
         props: [
             "image",
             "description",
             "lien",
         ],
 
+        //Nomme le composant Poste
         name: "Poste"
     }
 </script>

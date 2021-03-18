@@ -9,6 +9,7 @@
                 <label for="metaDesc">Meta Description </label>
                 <input type="text" name="metaDesc" v-model="metaDesc">
             </div>
+            <!-- Définir l'image par défault -->
             <div id="image">
                 <img v-if="posts[$route.params.id].img == ''"
                     src="http://www.ipsgroup.fr/wp-content/uploads/2013/12/default_image_01.png" alt="">
@@ -28,6 +29,7 @@
 <script>
     export default {
         data() {
+            //Récupère les informations de l'article sélectionné pour les afficher
             return {
                 title: this.$store.state.post[this.$route.params.id].title,
                 metaTitle: this.$store.state.post[this.$route.params.id].metaTitle,
@@ -37,6 +39,7 @@
             }
         },
         methods: {
+            //Enregistrer les nouvelles informations rentrés dans le formulaires
             updatePost() {
                 this.$store.dispatch('updatePost', [{
                     title: this.title,
@@ -45,18 +48,19 @@
                     img: this.img,
                     content: this.content,
                     date: this.date,
-                    author : this.$store.state.post[this.$route.params.id].author,
-                    imgauthor :this.$store.state.post[this.$route.params.id].imgauthor
+                    author: this.$store.state.post[this.$route.params.id].author,
+                    imgauthor: this.$store.state.post[this.$route.params.id].imgauthor
                 }, this.$route.params.id])
             }
         },
 
         computed: {
-            /// Fonction pour aller chercher le post précis
+            // Fonction pour aller chercher l'article précis
             posts() {
                 return this.$store.state.post
             },
 
+            // Définir la date de la création de l'article
             date: function () {
                 var date = new Date();
                 var year = date.getFullYear();

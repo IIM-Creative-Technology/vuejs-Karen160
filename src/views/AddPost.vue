@@ -34,6 +34,7 @@
         },
 
         computed: {
+            // Définir la date de la création de l'article
             date: function () {
                 var date = new Date();
                 var year = date.getFullYear();
@@ -48,14 +49,14 @@
                 return date;
             },
 
+            // Fonction pour aller chercher l'article précis
             posts() {
                 return this.$store.state.post
             },
-
-
         },
 
         methods: {
+            // Enregistrer les informations de l'article
             addPost() {
                 this.$store.dispatch('addPost', {
                     title: this.titre,
@@ -64,8 +65,8 @@
                     img: this.img,
                     content: this.content,
                     date: this.date,
-                    author : this.$store.state.user[this.$store.state.token].pseudo,
-                    imgauthor : this.$store.state.user[this.$store.state.token].img
+                    author: this.$store.state.user[this.$store.state.token].pseudo,
+                    imgauthor: this.$store.state.user[this.$store.state.token].img
                 })
             }
         }
