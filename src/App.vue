@@ -1,11 +1,23 @@
 <template>
   <div id="nav">
-    <router-link to="/admin">Gérer le blog</router-link> |
+    <router-link v-if="this.$store.state.token != null" to="/admin">Gérer le blog</router-link> |
     <router-link to="/blog">Blog</router-link> |
-    <router-link to="/login">Login</router-link>
+    <router-link v-if ="this.$store.state.token == null" to="/login">Login</router-link>
+    <router-link v-if ="this.$store.state.token != null" @click="disconnect" to="/login">Déconnexion</router-link>
   </div>
-  <router-view />
+  <router-view/>
 </template>
+
+
+<script>
+export default {
+    methods: {
+        disconnect(){
+          this.$store.state.token = null
+        }    
+    }
+}
+</script>
 
 <style>
   #app {

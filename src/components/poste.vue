@@ -12,7 +12,7 @@
         props: [
             "image",
             "description",
-            "lien"
+            "lien",
         ],
 
         name: "Poste"

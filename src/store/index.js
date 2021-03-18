@@ -10,7 +10,8 @@ export default new VueX.Store({
 
   state: {
     post: [],
-    user:[]
+    user:[],
+    token: null
   },
 
   mutations: {
@@ -44,6 +45,8 @@ export default new VueX.Store({
       if(state.user.find(user => user.email === payload.email)){
         if(state.user[index].password === payload.password){
           alert ('super vous êtes connectés')
+          state.token = index
+          alert(state.token)
         }else{
           alert('Trompé de mot de passe')
         }
@@ -100,7 +103,6 @@ export default new VueX.Store({
     addUser(context, payload){
       if(payload.password){
           context.commit('addUser', payload)
-          console.log('bonjour')
           router.push('/login')
       }else{
         alert('remplissez votre mot de passe')

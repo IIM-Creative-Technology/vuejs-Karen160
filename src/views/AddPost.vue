@@ -64,7 +64,7 @@
                     img: this.img,
                     content: this.content,
                     date: this.date,
-                    author : "Inconnu",
+                    author : this.$store.state.user[this.$store.state.token].email,
                     imgauthor : "http://www.ipsgroup.fr/wp-content/uploads/2013/12/default_image_01.png",
                 })
             }
