@@ -5,6 +5,4 @@ import router from './router'
 
 
 
-App.config.devtools = true
-
 createApp(App).use(router).use(store).mount('#app')
