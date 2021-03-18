@@ -1,13 +1,13 @@
 <template>
     <section>
         <label>Email :</label>
-        <input type="text">
+        <input type="text" v-model="email">
         <br><br><br>
         <label>Mot de passe :</label>
-        <input type="text">
+        <input type="text" v-model="password">
         <br><br><br>
-        <button>Se connecter</button>
-        <p>Pas encore de compte ? <a href="">S'inscrire</a></p>
+        <button @click="login">Se connecter</button>
+        <p>Pas encore de compte ? <span @click='addUser'>S'inscrire</span></p>
     </section>
 </template>
 
@@ -17,7 +17,23 @@
 
         computed: {},
 
-        components: {}
+        components: {},
+
+        methods: {
+            addUser() {
+                this.$store.dispatch('addUser', {
+                    email: this.email,
+                    password: this.password,
+                })
+            },
+
+            login() {
+                this.$store.dispatch('login', {
+                    email: this.email,
+                    password: this.password,
+                })
+            }
+        }
     }
 </script>
 

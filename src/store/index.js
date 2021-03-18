@@ -1,12 +1,16 @@
+
 import VueX from 'vuex';
+
 import router from '../router/index.js'
+
+
 
 
 export default new VueX.Store({
 
   state: {
     post: [],
-    // user:[]
+    user:[]
   },
 
   mutations: {
@@ -22,6 +26,30 @@ export default new VueX.Store({
 
     deletePost(state, payload) {
       state.post.splice(payload, 1)
+    },
+
+
+    addUser(state, payload) {
+      if(state.user.find(user => user.email === payload.email)){
+        alert("l'email existe déjà")
+      }else{
+        state.user.push(payload)
+        console.log(state.user)
+      }
+      
+    },
+
+    login(state, payload) {
+      var index = state.user.findIndex(user => user.email === payload.email)
+      if(state.user.find(user => user.email === payload.email)){
+        if(state.user[index].password === payload.password){
+          alert ('super vous êtes connectés')
+        }else{
+          alert('Trompé de mot de passe')
+        }
+      }else{
+        alert("l'email n'existe pas")
+      }
     }
 
 
@@ -67,6 +95,21 @@ export default new VueX.Store({
       } else {
         alert('Renseignez le titre');
       }
+    },
+
+    addUser(context, payload){
+      if(payload.password){
+          context.commit('addUser', payload)
+          console.log('bonjour')
+          router.push('/login')
+      }else{
+        alert('remplissez votre mot de passe')
+      }
+    },
+
+    login(context, payload){
+      context.commit('login', payload)
+      router.push('/blog')
     }
   },
 
