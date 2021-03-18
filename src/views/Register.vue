@@ -17,7 +17,7 @@
         <input type="text" v-model="password">
         <br><br><br>
         <button @click="addUser">S'inscrire</button>
-        <p>Déjà inscrit ? <router-link to="/register"><span>Se connecter</span></router-link></p>
+        <p>Déjà inscrit ? <router-link to="/login"><span>Se connecter</span></router-link></p>
     </section>
 </template>
 

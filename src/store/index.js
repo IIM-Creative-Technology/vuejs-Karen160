@@ -3,9 +3,6 @@ import VueX from 'vuex';
 
 import router from '../router/index.js'
 
-
-
-
 export default new VueX.Store({
 
   state: {
@@ -17,7 +14,11 @@ export default new VueX.Store({
   mutations: {
 
     addPost(state, payload) {
-      state.post.push(payload)
+      if(state.post.find(post => post.title === payload.title)){
+        alert("le titre existe déjà")
+      }else{
+        state.post.push(payload)
+      }
     },
 
     updatePost(state, payload) {
@@ -44,14 +45,14 @@ export default new VueX.Store({
       var index = state.user.findIndex(user => user.email === payload.email)
       if(state.user.find(user => user.email === payload.email)){
         if(state.user[index].password === payload.password){
-          alert ('super vous êtes connectés')
+          alert ('Bienvenue, vous êtes connectés')
           state.token = index
           router.push('/blog')
         }else{
           alert('Trompé de mot de passe')
         }
       }else{
-        alert("l'email n'existe pas")
+        alert("L'email n'existe pas")
       }
     }
 

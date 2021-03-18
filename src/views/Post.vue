@@ -1,13 +1,13 @@
 <template>
     <div>
-        <img :src="posts[$route.params.id].img" :alt="posts[$route.params.id].title">
-        <h2>{{posts[$route.params.id].title}}</h2>
-        <p>{{posts[$route.params.id].content}}</p>
+        <img :src="posts[index].img" :alt="posts[index].title">
+        <h2>{{posts[index]}}</h2>
+        <p>{{posts[index].content}}</p>
         <article>
-        <span>Posté le {{posts[$route.params.id].date}}</span>
+        <span>Posté le {{posts[index].date}}</span>
           <div>
-            <img :src="posts[$route.params.id].imgauthor">
-            <span>{{posts[$route.params.id].author}}</span>
+            <img :src="posts[index].imgauthor">
+            <span>{{posts[index].author}}</span>
           </div>
         </article>
     </div>
@@ -18,6 +18,10 @@ export default {
     computed: {
       posts(){
         return this.$store.state.post
+      },
+      index(){
+        var index = this.$store.state.post.findIndex(post => post.title === this.$route.params.title)
+        return index
       }
   },  
 }
