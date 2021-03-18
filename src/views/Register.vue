@@ -1,19 +1,33 @@
 <template>
     <section>
+        <img v-if="img == ''" src="http://www.ipsgroup.fr/wp-content/uploads/2013/12/default_image_01.png"
+                alt="">
+        <img v-else v-bind:src="img" alt="">
+        <br><br>
+        <label>Photo de profil :</label>
+        <input type="text" placeholder="url de l'image" v-model.trim="img">
+        <br><br><br>
+        <label>Pseudo :</label>
+        <input type="text" placeholder="pseudo">
+        <br><br><br>
         <label>Email :</label>
         <input type="text" v-model="email">
         <br><br><br>
         <label>Mot de passe :</label>
         <input type="text" v-model="password">
         <br><br><br>
-        <button @click="login">Se connecter</button>
-        <p>Pas encore de compte ? <router-link to="/register"><span>S'inscrire</span></router-link></p>
+        <button @click="login">S'inscrire</button>
+        <p>Déjà inscrit ? <router-link to="/register"><span>Se connecter</span></router-link></p>
     </section>
 </template>
 
 <script>
     export default {
-        data() {},
+        data() {
+            return {
+                img: "",
+            }
+        },
 
         computed: {},
 
@@ -48,11 +62,19 @@
         font-size: 20px;
     }
 
-    label:nth-child(1){
+    label:nth-child(4){
+        margin-right: 70px;
+    }
+
+    label:nth-child(9){
+        margin-right: 130px;
+    }
+
+     label:nth-child(14){
         margin-right: 150px;
     }
 
-    label:nth-child(6){
+    label:nth-child(19){
         margin-right: 80px;
     }
 
@@ -75,5 +97,17 @@
         font-weight: bold;
         cursor: pointer;
     }
+
+    /* #image {
+        display: flex;
+        flex-direction: column;
+    } */
+
+    img {
+        height: 200px;
+        width: 200px;
+        border-radius: 200px;
+    }
+
 
 </style>
