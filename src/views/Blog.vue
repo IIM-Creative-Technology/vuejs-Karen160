@@ -1,6 +1,6 @@
 <template>
     <div v-for="(post, index) in posts" :key="(post, index)">
-        <Poste v-if="index <= count" :image="post.img" :titre="post.title" :description="post.metaDesc" :lien="index"></Poste>
+        <Poste v-if="index <= count" :image="post.img" :titre="post.title" :description="post.metaDesc" :lien="index+'/'+post.title"></Poste>
     </div>
     <button v-if="posts.length > count+1" @click="count += 2">Voir plus</button>
 </template>

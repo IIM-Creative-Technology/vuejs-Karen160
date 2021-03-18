@@ -20,13 +20,6 @@
         components: {},
 
         methods: {
-            addUser() {
-                this.$store.dispatch('addUser', {
-                    email: this.email,
-                    password: this.password,
-                })
-            },
-
             login() {
                 this.$store.dispatch('login', {
                     email: this.email,

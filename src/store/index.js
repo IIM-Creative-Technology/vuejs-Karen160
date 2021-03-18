@@ -46,7 +46,7 @@ export default new VueX.Store({
         if(state.user[index].password === payload.password){
           alert ('super vous êtes connectés')
           state.token = index
-          alert(state.token)
+          router.push('/blog')
         }else{
           alert('Trompé de mot de passe')
         }
@@ -102,16 +102,37 @@ export default new VueX.Store({
 
     addUser(context, payload){
       if(payload.password){
-          context.commit('addUser', payload)
-          router.push('/login')
+        if(payload.pseudo){
+          if(payload.email){
+            if (payload.img == "") {
+              payload.img = "http://www.ipsgroup.fr/wp-content/uploads/2013/12/default_image_01.png"
+            }
+            context.commit('addUser', payload)
+            router.push('/login')
+          }else{
+            alert('Vous avez oublié votre email')
+          }
+        }else{
+          alert('Vous avez oublié votre pseudo')
+        }
+        
       }else{
         alert('remplissez votre mot de passe')
       }
     },
 
     login(context, payload){
-      context.commit('login', payload)
-      router.push('/blog')
+      if(payload.email){
+        if(payload.password){
+          context.commit('login', payload)
+          
+        }else{
+          alert("Vous avez oublié le mot de passe")
+        }
+      }else{
+        alert("Vous avez oublié l'email")
+      }
+      
     }
   },
 

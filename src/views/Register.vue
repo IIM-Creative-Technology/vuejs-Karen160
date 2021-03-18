@@ -8,7 +8,7 @@
         <input type="text" placeholder="url de l'image" v-model.trim="img">
         <br><br><br>
         <label>Pseudo :</label>
-        <input type="text" placeholder="pseudo">
+        <input type="text" placeholder="pseudo" v-model="pseudo">
         <br><br><br>
         <label>Email :</label>
         <input type="text" v-model="email">
@@ -16,7 +16,7 @@
         <label>Mot de passe :</label>
         <input type="text" v-model="password">
         <br><br><br>
-        <button @click="login">S'inscrire</button>
+        <button @click="addUser">S'inscrire</button>
         <p>Déjà inscrit ? <router-link to="/register"><span>Se connecter</span></router-link></p>
     </section>
 </template>
@@ -38,13 +38,9 @@
                 this.$store.dispatch('addUser', {
                     email: this.email,
                     password: this.password,
-                })
-            },
+                    img: this.img,
+                    pseudo: this.pseudo
 
-            login() {
-                this.$store.dispatch('login', {
-                    email: this.email,
-                    password: this.password,
                 })
             }
         }

@@ -44,7 +44,9 @@
                     metaDesc: this.metaDesc,
                     img: this.img,
                     content: this.content,
-                    date: this.date
+                    date: this.date,
+                    author : this.$store.state.post[this.$route.params.id].author,
+                    imgauthor :this.$store.state.post[this.$route.params.id].imgauthor
                 }, this.$route.params.id])
             }
         },
